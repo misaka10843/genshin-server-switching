@@ -8,3 +8,7 @@ Windows版原神大陆地区bilibili/官服切换程序
 然后就直接创建快捷方式到桌面即可！<br>
 （因为是用vscode编译的，所以没有添加icon）<br>
 ![快捷方式](截图/kuaijie.png)
+
+### readme统计
+![统计](https://count.getloli.com/get/@misaka10843?theme=elbooru)
+<br>
