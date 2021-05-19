@@ -21,7 +21,7 @@ int main()
 	 *
 	 ******************************/
 
-
+	/*算法非常的通俗qwq，因为测试了用if else有bug，所以只能一个判断读取一次文件了qwq*/
 	char line[256] = { 0 };
 
 	ifstream	mihoyo("../Genshin Impact Game/config.ini");
