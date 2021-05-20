@@ -25,3 +25,6 @@ Windows版原神大陆地区bilibili/官服切换程序
 <br>
 ## 后言
 本人为C++新手，可能有些地方代码很杂(特别是获取config.ini判断的那一段)，亦或者不完美，您可以Pull或者Issues建议或者文件，感谢您的帮助！
+
+## 开源协议
+MPL-2.0 License
