@@ -4,7 +4,7 @@ Windows版原神大陆地区bilibili/官服切换程序
 
 ## 如何使用
 
-1. 从[这里](http)下载最新的编译版本,随便放在哪里都可以(建议**新建一个文件夹放入exe程序后创建快捷方式**)
+1. 从[这里](https://github.com/misaka10843/genshin-server-switching/releases/latest)下载最新的编译版本,随便放在哪里都可以(建议**新建一个文件夹放入exe程序后创建快捷方式**)
 
 2. 复制游戏路径(如：`E:\Genshin Impact\Genshin Impact Game`)
 
