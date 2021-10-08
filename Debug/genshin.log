@@ -1,0 +1,4 @@
+﻿  genshin.cpp
+c:\users\a\source\repos\genshin\genshin\genshin.cpp(162): warning C4244: “=”: 从“std::streamsize”转换到“int”，可能丢失数据
+c:\users\a\source\repos\genshin\genshin\genshin.cpp(183): warning C4244: “=”: 从“std::streamsize”转换到“int”，可能丢失数据
+  genshin.vcxproj -> c:\Users\a\source\repos\genshin\Debug\genshin.exe
