@@ -2,6 +2,7 @@
 import requests
 import os
 import time
+import urllib3
 
 
 def getversion():
@@ -74,7 +75,7 @@ def inichange():
             f.write(
                 "[General]\r\nchannel=%s\r\ncps=%s\r\ngame_version=%s\r\nsdk_version=\r\nsub_channel=%s" % (verjson["mihoyo_channel"], verjson["mihoyo_cps"], verjson["game_version"], verjson["mihoyo_sub_channel"]))
         print("已经从bilibili服务器转接到mihoyo服务器啦！")
-    isopen = input("是否打开原神?(0:是,1:否,默认0)\n")
+    isopen = input("是否打开原神?(0:是,1:否,默认0)\n(因为更改了服务器,所以您可能需要打开后关闭再打开才能生效!)")
     if(isopen == "1"):
         print("好吧，那我就关闭啦！(*/ω＼*)")
         time.sleep(3)
@@ -88,15 +89,12 @@ def inichange():
 def getSDK():
     print("downloading PCGameSDK.dll")
     url = 'https://raw.fastgit.org/misaka10843/genshin-server-switching/2.0/PCGameSDK.dll'
-    r = requests.get(url, timeout=10)
-    if r.status_code == 200:
-        with open(path+"/YuanShen_Data/Plugins/PCGameSDK.dll", "wb") as code:
-            code.write(r.content)
-        print("download PCGameSDK.dll complete")
-    else:
-        print("我们似乎无法获取b站的SDK,还请您检查您的网络,非常感谢！\n或者您从GitHub库中下载PCGameSDK.dll后放入您游戏文件夹中的YuanShen_Data/Plugins文件夹中即可")
-        time.sleep(3)
-        exit()
+    http = urllib3.PoolManager()
+    response = http.request('GET', url)
+    with open(path+"/YuanShen_Data/Plugins/PCGameSDK.dll", "wb") as code:
+        code.write(response.data)
+    print("download PCGameSDK.dll complete")
+    response.release_conn()
 
 
 if __name__ == "__main__":

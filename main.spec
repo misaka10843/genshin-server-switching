@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\misaka10843\\Desktop\\Github\\genshin-server-switching'],
+             pathex=[],
              binaries=[],
              datas=[],
              hiddenimports=[],
