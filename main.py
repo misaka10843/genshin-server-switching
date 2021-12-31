@@ -8,16 +8,19 @@ def getversion():
     # *先将verjson给全局化
     global verjson
     # *获取配置
+
     response = requests.get(
-        "https://cdn.jsdelivr.net/gh/misaka10843/genshin-server-switching@2.0/ver.json", timeout=30)
+        "https://gitee.com/misaka10843/genshin-server-switching/raw/2.0/ver.json", timeout=30)
     # !简要判断是否服务器无法连接
     if response.status_code == 200:
         # *将api解析成json
         verjson = response.json()
+        print("github/gitee库中的配置文件游戏版本信息为:" +
+              verjson["game_version"]+"\n如果与最新游戏版本请前往Github发送issue,感谢支持与维护！")
     else:
-        print("中国镜像加速源似乎崩溃了，我们将直接从github获取qwq\n")
-        verjson = requests.get(
-            "https://raw.githubusercontent.com/misaka10843/genshin-server-switching/2.0/ver.json")
+        print("gitee都无法访问,您的网络似乎有重大问题?\n请检查您的网络后重试\n")
+        time.sleep(3)
+        exit()
 
 
 def get_game_path():
@@ -34,6 +37,9 @@ def get_game_path():
             print("我们已经找到了您的游戏文件啦！")
             with open('./path.txt', 'w+') as f:
                 f.write(path)  # 将路径写入文件
+        else:
+            print("您似乎写错了路径?我们重来一遍吧！")
+            get_game_path()
 
 
 def iniget():
@@ -53,6 +59,10 @@ def iniget():
 
 def inichange():
     if(isserver == "bili"):
+        # *查找是否有PCGameSDK.dll(B站的SDK)
+        if not (os.path.exists(path+"/YuanShen_Data/Plugins/PCGameSDK.dll")):
+            getSDK()
+
         with open(path+"/config.ini", 'w+') as f:
             # 将路径写入文件
             f.write(
@@ -75,8 +85,22 @@ def inichange():
         exit()
 
 
+def getSDK():
+    print("downloading PCGameSDK.dll")
+    url = 'https://raw.fastgit.org/misaka10843/genshin-server-switching/2.0/PCGameSDK.dll'
+    r = requests.get(url, timeout=10)
+    if r.status_code == 200:
+        with open(path+"/YuanShen_Data/Plugins/PCGameSDK.dll", "wb") as code:
+            code.write(r.content)
+        print("download PCGameSDK.dll complete")
+    else:
+        print("我们似乎无法获取b站的SDK,还请您检查您的网络,非常感谢！\n或者您从GitHub库中下载PCGameSDK.dll后放入您游戏文件夹中的YuanShen_Data/Plugins文件夹中即可")
+        time.sleep(3)
+        exit()
+
+
 if __name__ == "__main__":
-    print("欢迎使用原神快速换服程序qwq\n")
+    print("欢迎使用原神快速换服程序qwq\n我们现在准备获取配置信息,请稍后!")
     getversion()
     get_game_path()
     iniget()
