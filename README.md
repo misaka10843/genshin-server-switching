@@ -6,10 +6,27 @@ Windows版原神大陆地区bilibili/官服切换程序
 
 ## 如何使用
 
+### 1.直接使用
+
 1. 从[这里](https://github.com/misaka10843/genshin-server-switching/releases/latest)下载最新稳定的编译版本,随便放在哪里都可以(建议**新建一个文件夹放入exe程序后创建快捷方式**)
 1-1. 或者从[这里](https://github.com/misaka10843/genshin-server-switching/actions/)下载最新的测试构建版本
 2. 复制游戏路径(如：`E:\Genshin Impact\Genshin Impact Game`)
 3. 启动程序按照提示操作即可qwq
+
+### 2.编译使用
+
+1. `git clone https://github.com/misaka10843/genshin-server-switching.git`然后` cd ./genshin-server-switching`
+2. `pip install -r requirements.txt`安装依赖
+3. `pyinstaller -i icon.ico -F main.py`打包exe
+4. 进入`dist`文件夹即可看见`main.exe`
+5. 启动程序按照提示操作即可qwq
+
+### 3.直接使用
+
+1. `git clone https://github.com/misaka10843/genshin-server-switching.git`然后` cd ./genshin-server-switching`
+2. `pip install -r requirements.txt`安装依赖
+3. `python main.py`直接运行
+4. 按照提示操作即可qwq
 
 （ps：此程序的配置文件已经链接到本仓库的 `ver.json`上，只要此文件一更新所有程序再次打开时会**重新获取配置**）
 
