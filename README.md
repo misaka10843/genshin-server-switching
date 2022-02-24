@@ -6,7 +6,8 @@ Windows版原神大陆地区bilibili/官服切换程序
 
 ## 如何使用
 
-1. 从[这里](https://github.com/misaka10843/genshin-server-switching/releases/latest)下载最新的编译版本,随便放在哪里都可以(建议**新建一个文件夹放入exe程序后创建快捷方式**)
+1. 从[这里](https://github.com/misaka10843/genshin-server-switching/releases/latest)下载最新稳定的编译版本,随便放在哪里都可以(建议**新建一个文件夹放入exe程序后创建快捷方式**)
+1-1. 或者从[这里](https://github.com/misaka10843/genshin-server-switching/actions/)下载最新的测试构建版本
 2. 复制游戏路径(如：`E:\Genshin Impact\Genshin Impact Game`)
 3. 启动程序按照提示操作即可qwq
 
@@ -38,6 +39,12 @@ Windows版原神大陆地区bilibili/官服切换程序
 果然我还是不适合用C++写啊qwq
 
 ## 备注
+
+### 2022.2.24
+
+更新2.5，添加对sdk_pkg_version的支持，添加备份功能防止进入游戏报错导致全部重装
+
+将下载源换到gitee，添加Windows的action最新构建
 
 ### 2021.12.31
 
