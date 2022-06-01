@@ -1,5 +1,8 @@
 # genshin-server-switching
 
+## 如需继续使用，请下载此[启动器](https://github.com/123456fsdaf/GenshinImpact_Lanucher)来更换服务器
+
+
 Windows版原神大陆地区bilibili/官服切换程序
 
 `源码仅支持python3`
